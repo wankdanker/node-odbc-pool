@@ -1,0 +1,21 @@
+{
+  "name": "node-odbc-pool",
+  "version": "0.0.0",
+  "description": "A connection pool for the ODBC module",
+  "main": "pool.js",
+  "dependencies": {
+    "generic-pool": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "odbc",
+    "pool",
+    "connection",
+    "string"
+  ],
+  "author": "Dan VerWeire",
+  "license": "MIT"
+}
