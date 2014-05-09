@@ -1,6 +1,6 @@
 {
   "name": "odbc-pool",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A connection pool for the ODBC module",
   "main": "pool.js",
   "dependencies": {
