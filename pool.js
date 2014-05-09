@@ -38,11 +38,14 @@ Pool.prototype.open = function (connectionString, cb) {
 				//we close and re-open the connection
 				//to clear any temporary tables
 				client.___close(function (err) {
+					//call back early, not after opening the new connection
+					//that would be a waste of time.
+					if (cb) cb();
+
 					client.open(connectionString, function (err) {
 						//release the clean connection back
 						//to the pool
 						pool.release(client);
-						if (cb) cb();
 					});
 				});
 			};
