@@ -19,12 +19,13 @@ Pool.prototype.open = function (connectionString, cb) {
 
 	//else define a new pool for this connection string
 	var pool = self.pools[connectionString] = GenericPool.Pool({
-		name : connectionString
+		name : self.options.name || connectionString
 		, max : self.options.max
 		, min : self.options.min
 		, idleTimeoutMillis : self.options.idleTimeoutMillis
 		, refreshIdle : self.options.refreshIdle
 		, reapIntervalMillis : self.options.reapIntervalMillis
+		, priorityRange : self.options.priorityRange
 		, log : self.options.log
 		, create : function (callback) {
 			var client = odbc();
@@ -63,6 +64,9 @@ Pool.prototype.open = function (connectionString, cb) {
 		}
 		, destroy : function (client) {
 			client.___closeSync();
+		}
+		, validate : function (client) {
+			return client.connected
 		}
 	});
 
