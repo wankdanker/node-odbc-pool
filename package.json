@@ -4,10 +4,10 @@
   "description": "A connection pool for the ODBC module",
   "main": "pool.js",
   "dependencies": {
-    "generic-pool": "^2.0.4"
+    "generic-pool": "^2.5.4"
   },
   "devDependencies": {
-    "odbc": "^0.6.6"
+    "odbc": "^1.4.2"
   },
   "scripts": {
     "test": "node test.js"

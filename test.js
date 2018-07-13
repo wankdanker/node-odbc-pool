@@ -1,7 +1,7 @@
 var ODBCPool = require('./pool.js');
 var p = new ODBCPool({ 
 	log : true
-	, min : 2
+	, min : 0
 	, max : 10
 });
 
